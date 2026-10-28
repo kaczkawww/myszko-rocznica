@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#160b14">
+  <meta name="description" content="Mały świat stworzony specjalnie dla Myszki.">
+  <title>Our Little Universe — dla Myszki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Our Little Universe — początek strony">
+      <span class="brand-mark">♡</span><span>our little universe</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#counter">Nasz czas</a>
+      <a href="#envelopes">Listy</a>
+      <a href="#reasons">Dlaczego Ty</a>
+      <a href="#letter">Mój list</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Nie ma osobnego ekranu powitalnego: strona od razu pokazuje jej świat. -->
+    <section class="hero section-wrap reveal">
+      <div class="eyebrow"><span class="tiny-heart">♥</span> MAŁY KAWAŁEK INTERNETU TYLKO DLA CIEBIE</div>
+      <h1>Dla Ciebie,<br><em id="heroNickname">Myszko</em><span class="hero-period">.</span></h1>
+      <p class="hero-copy" id="heroSubtitle">Nie potrzebuję wielkich rzeczy, żeby powiedzieć Ci coś ważnego. Chciałem po prostu stworzyć dla Ciebie mały świat.</p>
+      <a class="button button-primary" href="#counter">Odkryj nasz świat <span aria-hidden="true">↓</span></a>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="orbit-core">♥</div><span class="orbit-dot dot-a"></span><span class="orbit-dot dot-b"></span>
+      </div>
+      <div class="scroll-hint"><span></span> trochę niżej czeka coś dla Ciebie</div>
+    </section>
+
+    <section class="section-wrap counter-section reveal" id="counter">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 01</span>
+        <h2>Od tego dnia <em>my.</em></h2>
+        <p>Każda sekunda jest małą częścią naszej historii.</p>
+      </div>
+      <div class="counter-card glass">
+        <div class="counter-top"><span class="live-dot"></span> RAZEM OD 1 PAŹDZIERNIKA 2026</div>
+        <div class="counter-grid" aria-live="polite">
+          <div><strong id="days">—</strong><span>dni</span></div>
+          <div><strong id="hours">—</strong><span>godzin</span></div>
+          <div><strong id="minutes">—</strong><span>minut</span></div>
+          <div><strong id="seconds">—</strong><span>sekund</span></div>
+        </div>
+        <div class="counter-divider"></div>
+        <p id="anniversaryMessage" class="counter-message">Nasz pierwszy wspólny miesiąc już niedługo.</p>
+        <div class="progress-track"><span id="monthProgress"></span></div>
+        <div class="progress-caption"><span>Pierwszy rozdział</span><span id="progressLabel">—</span></div>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="envelopes">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 02</span>
+        <h2>Małe sekrety <em>dla Ciebie.</em></h2>
+        <p>Wybierz kopertę. Każda skrywa coś innego.</p>
+      </div>
+      <div class="envelope-grid" id="envelopeGrid"></div>
+    </section>
+
+    <section class="section-wrap reveal" id="reasons">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 03</span>
+        <h2>10 małych powodów,<br><em>dla których jesteś Ty.</em></h2>
+        <p>Dotknij karty, żeby odkryć jej drugą stronę.</p>
+      </div>
+      <div class="reason-grid" id="reasonGrid"></div>
+    </section>
+
+    <section class="section-wrap reveal" id="letter">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 04</span>
+        <h2>Coś, co chcę Ci <em>powiedzieć.</em></h2>
+        <p>Bez pośpiechu. Ten kawałek jest tylko dla Ciebie.</p>
+      </div>
+      <div class="letter-card glass">
+        <div class="letter-seal" aria-hidden="true">♡</div>
+        <p class="letter-label">PRYWATNY LIST</p>
+        <h3>Do mojej Myszki</h3>
+        <div class="letter-content" id="letterContent"><p>Ten list czeka na Ciebie.</p></div>
+        <button class="button button-primary" id="openLetter">Otwórz mój list <span aria-hidden="true">♡</span></button>
+        <button class="text-button hidden" id="showFullLetter">Pokaż cały tekst</button>
+        <p class="letter-signature" id="letterSignature">z całego serca, ja</p>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="dreams">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 05</span>
+        <h2>Jeszcze tyle <em>przed nami.</em></h2>
+        <p>Małe rzeczy, które kiedyś mogą stać się naszymi ulubionymi wspomnieniami.</p>
+      </div>
+      <div class="dream-list" id="dreamList"></div>
+      <p class="tiny-note">To nie lista obowiązków. To tylko kilka pomysłów na nasze „kiedyś”.</p>
+    </section>
+
+    <section class="section-wrap reveal" id="when">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 06</span>
+        <h2>Otwórz, <em>gdy…</em></h2>
+        <p>Wybierz to, co pasuje do chwili. Mam dla Ciebie kilka słów.</p>
+      </div>
+      <div class="when-grid" id="whenGrid"></div>
+    </section>
+
+    <section class="section-wrap secret-section reveal" id="secret">
+      <div class="secret-panel glass">
+        <div class="secret-sparkle" aria-hidden="true">✦</div>
+        <span class="eyebrow">MAŁY SEKRET</span>
+        <h2>Nie wszystko widać <em>na pierwszy rzut oka.</em></h2>
+        <p>Podobno gdzieś na tej stronie ukryło się małe serce. Znajdziesz je?</p>
+        <div class="secret-hint">Podpowiedź: czasem warto kliknąć coś, co wygląda jak dekoracja.</div>
+        <button class="secret-heart" id="secretHeart" aria-label="Ukryte serce">♡</button>
+        <p class="secret-result hidden" id="secretResult">Znalazłaś je! A teraz mały sekret: jesteś ważniejsza, niż umiem czasem powiedzieć. ♡</p>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="quiz">
+      <div class="section-heading">
+        <span class="eyebrow">ROZDZIAŁ 07</span>
+        <h2>Jak dobrze znamy <em>naszą historię?</em></h2>
+        <p>To quiz bez złych odpowiedzi — chodzi tylko o uśmiech.</p>
+      </div>
+      <div class="quiz-card glass" id="quizCard">
+        <div class="quiz-progress"><span id="quizProgress"></span></div>
+        <p class="quiz-count" id="quizCount">PYTANIE 1</p>
+        <h3 id="quizQuestion">Gotowa?</h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+        <button class="button button-primary hidden" id="quizNext">Następne pytanie →</button>
+      </div>
+    </section>
+
+    <section class="section-wrap reveal" id="finale">
+      <div class="finale-card">
+        <div class="finale-stars" aria-hidden="true">✦　·　✧　·　✦</div>
+        <div class="final-heart" aria-hidden="true">♥</div>
+        <span class="eyebrow">I TO JESZCZE NIE KONIEC</span>
+        <h2>To dopiero <em>pierwszy rozdział.</em></h2>
+        <p id="finalMessage">Dziękuję Ci za ten pierwszy miesiąc. Chcę poznawać z Tobą kolejne małe rzeczy, śmiać się z głupot i tworzyć wspomnienia, do których będziemy wracać.</p>
+        <button class="button button-light" id="finalButton">Mam coś jeszcze dla Ciebie</button>
+        <div class="final-extra hidden" id="finalExtra">
+          <p>Jeśli mogę Ci coś obiecać, to nie perfekcję. Chcę dawać Ci szczerość, uwagę i starać się, żebyś czuła się ważna. Dzisiaj, za miesiąc i dalej.</p>
+          <span>♡ dla Ciebie, Myszko ♡</span>
+        </div>
+      </div>
+      <p class="footer-note">stworzone z myślą o Tobie · <span id="footerYear"></span></p>
+    </section>
+  </main>
+
+  <dialog class="message-dialog" id="messageDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Zamknij">×</button>
+    <div class="dialog-heart">♡</div>
+    <p class="eyebrow" id="dialogEyebrow">DLA CIEBIE</p>
+    <h3 id="dialogTitle">Mała wiadomość</h3>
+    <p id="dialogBody"></p>
+    <button class="button button-primary" id="dialogOkay">Zamknij z uśmiechem</button>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
